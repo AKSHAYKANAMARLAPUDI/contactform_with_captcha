@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="center">
+        <h1 id="captchaHeading">
+            contact form with captcha
+        </h1>
+        <form id="frmContact" action="" method="POST" novalidate="novalidate">
+            <div class="label">Name:</div>
+            <div class="field">
+                <input type="text" id="name" name="name"
+                    placeholder="enter your name here"
+                    title="Please enter your name" class="required"
+                    aria-required="true" required>
+            </div>
+            <div class="label">Email:</div>
+            <div class="field">
+                <input type="text" id="email" name="email"
+                    placeholder="enter your email address here"
+                    title="Please enter your email address"
+                    class="required email" aria-required="true" required>
+            </div>
+            <div class="label">Phone Number:</div>
+            <div class="field">
+                <input type="text" id="phone" name="phone"
+                    placeholder="enter your phone number here"
+                    title="Please enter your phone number"
+                    class="required phone" aria-required="true" required>
+            </div>
+            <div class="label">Comments:</div>
+            <div class="field">
+                <textarea id="comment-content" name="content"
+                    placeholder="enter your comments here"></textarea>
+            </div>
+            <div class="g-recaptcha" data-sitekey="<?php echo SITE_KEY; ?>"></div>
+            <div id="mail-status"></div>
+            
+        </form>
+        <div id="captchaBackground">
+            <canvas id="captcha">captcha text</canvas>
+            <input id="textBox" type="text" name="text">
+            <div id="buttons">
+                <input id="submitButton" type="submit">
+                <button id="refreshButton" type="submit">Refresh</button>
+            </div>
+            <span id="output"></span>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
